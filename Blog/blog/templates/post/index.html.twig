@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="container">
+   
+    <div class="card  text-center">
+
+    {# <img class="card-img-top" src="{{ asset('uploads/images/' ~ post.image) }}" alt="Card image cap"> #}
+    <img class="card-img-top" src="{{ post.image }}" alt="Card image cap">
+    <div class="card-body">
+        <h1 class="card-title">{{post.title}}</h1>
+        crée le  {{post.createdAt|date("m/d/Y")  }}
+        <p>{{post.slug}}</p>
+        {% for category in post.category %}
+        <p class="card-text text-primary">{{category.name}}</p>
+        {% endfor %}
+        <p class="card-text">{{post.content | raw }}</p>
+        
+         <a href="{{ path('comment_create', { id: post.id}) }} "><button>Add a comment</button></a>
+        {% for comment in post.comments %}
+        <p class="card-text text-primary">{{comment.message}}</p>
+        {% endfor %}
+    </div>
+    
+  
+</div>
+
+ 
+
+    
+</div>
+{% endblock %}
