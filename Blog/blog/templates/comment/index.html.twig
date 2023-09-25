@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommentController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+ {{ form_start(CommentForm) }}
+    {{ form_widget(CommentForm) }}
+
+    
+{{ form_end(CommentForm) }}
+    
+</div>
+{% endblock %}
