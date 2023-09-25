@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<h1> Affichage des categories</h1>
+ <label for="cars">Filtre :</label>
+  <select name="category" id="category">
+    {% for category in categories %}
+   
+  <option value={{category.name}}>{{category.name}} crée le  {{ category.createdAt|date("m/d/Y")  }}</option>
+
+   {% endfor %}
+   </select>
+
+   <a class="nav-link" href="{{path('category_create')}}"><button>Add category</button></a>
+</div>
+{% endblock %}
