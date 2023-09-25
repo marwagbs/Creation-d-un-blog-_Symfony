@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+  {% block javascripts %}
+    <script defer src="{{asset('js/scroll.js')}}"></script>
+    <script> 
+    //avoir un chemain absolut
+    {# let route ={{path}} #}
+    </script>
+{% endblock %}
+{% block body %}
+
+<div class="container ">
+ {% if app.user %}
+<a class="nav-link" href="{{path('post_create')}}"><button>Add Post</button></a>
+{% endif %}
+<div id="posts">
+
+{% include 'home/posts.html.twig' %}
+
+ </div>
+ <button type="button" class="btn btn-dark " id="moreArticle">charger plus d'article</button>
+{% endblock %}
