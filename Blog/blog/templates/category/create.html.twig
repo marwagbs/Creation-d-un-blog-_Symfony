@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<h1> Création d'une catégorie</h1>
+   {# {{ form(categoryForm) }} #}
+   {# templates/task/new.html.twig #}
+{{ form_start(categoryForm, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_widget(categoryForm) }}
+{{ form_end(categoryForm) }}
+   
+</div>
+{% endblock %}
